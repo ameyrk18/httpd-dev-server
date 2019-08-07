@@ -1,0 +1,22 @@
+- name: check if users exist, or else this fails
+  getent: database=passwd key="{{ item.key }}"
+  with_dict: "{{ v_hosts }}"
+
+- name: create document root for public htmls
+  file:
+    path: "{{ main_document_root }}{{ item.value.website }}/{{ html_directory }}"
+    state: directory
+    owner: "{{ item.key }}"
+    group: "{{ item.key }}"
+    mode: 0755
+  with_dict: "{{ v_hosts }}"
+
+
+#- name: Change file ownership, group and permissions
+#  file:
+#    path: "{{ main_document_root }}{{ item.value.website }}/{{ html_directory }}"
+#    owner: "{{ item.key }}"
+#    group: "{{ item.key }}"
+#    mode: 0755
+#    recurse: yes
+#  with_dict: "{{ v_hosts }}"

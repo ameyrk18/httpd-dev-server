@@ -1,0 +1,13 @@
+*.iml
+*.retry
+.idea/
+*.old
+*.bck
+.DS_Store
+*.plan
+**/.terraform/
+**/.terragrunt-cache
+**/*.yaml.dec
+
+
+

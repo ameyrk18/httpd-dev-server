@@ -1,0 +1,29 @@
+- name: configure vhosts
+  template:
+    src: vhosts.conf.j2
+    dest: "{{ sites_available }}/{{ item.value.website }}.conf"
+  with_dict: "{{ v_hosts }}"
+  notify:
+    - test httpd configuration validity
+    - restart httpd
+  when:
+    - v_hosts is defined
+  loop_control:
+    label: "{{ item.value.website }}"
+  retries: 3
+
+
+- name: enable vhosts by creating symlinks
+  file:
+    src: "{{ sites_available }}/{{ item.value.website }}.conf"
+    dest: "{{ sites_enabled }}/{{ item.value.website }}.conf"
+    state: link
+  with_dict: "{{ v_hosts }}"
+
+- name: start and enable httpd
+  service:
+    name: "{{ httpd_service }}"
+    state: restarted
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"

@@ -1,0 +1,12 @@
+{{ ansible_managed | comment }}
+Listen {{ item.value.port }}
+<VirtualHost *:{{ item.value.port }}>
+    ServerName www.{{ item.value.website }}
+    ServerAlias {{ item.value.website }}
+    DocumentRoot /var/www/{{ item.value.website }}/public_html
+    ErrorLog /var/www/{{ item.value.website }}/error.log
+    CustomLog /var/www/{{ item.value.website }}/requests.log combined
+    SSLEngine on
+    SSLCertificateFile "{{ httpd_config_directory }}/ssl/{{ httpd_ssl_servername }}.crt"
+    SSLCertificateKeyFile "{{ httpd_config_directory }}/ssl/{{ httpd_ssl_servername }}.key"
+</VirtualHost>

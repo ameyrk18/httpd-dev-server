@@ -1,0 +1,7 @@
+- name: Adding user "{{ item.key }}"
+  user: name="{{ item.key }}"
+    shell=/bin/bash
+    password=${password}
+    groups=wheel
+    append=yes
+  with_dict: "{{ v_hosts }}"

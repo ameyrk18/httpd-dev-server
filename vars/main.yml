@@ -1,0 +1,50 @@
+main_document_root: /var/www/
+
+v_hosts:
+     dev1:
+       website: mango.com
+       port: 8081
+     dev2:
+       website: apple.com
+       port: 8082
+     dev3:
+       website: papaya.com
+       port: 8083
+     dev4:
+       website: grapes.com
+       port: 8084
+
+html_directory: public_html
+
+code_directory: code
+
+httpd_default_config_directory: /etc/httpd/conf/
+
+httpd_config_directory: /etc/httpd/conf.d/
+
+sites_available: /etc/httpd/sites-available
+
+sites_enabled: /etc/httpd/sites-enabled
+
+_httpd_service:
+  default: httpd
+  Alpine: apache2
+  Debian: apache2
+  openSUSE Leap: apache2
+  Ubuntu: apache2
+
+_httpd_binary:
+  default: httpd
+  Debian: apachectl
+  Ubuntu: apachectl
+
+httpd_sebooleans:
+  - httpd_enable_cgi
+  - httpd_unified
+  - httpd_builtin_scripting
+
+# This can be moved to secrets. Example vault or SOPS
+# If AD integrated then its not required here
+password: test123
+
+httpd_ssl_servername: localhost.localdomain

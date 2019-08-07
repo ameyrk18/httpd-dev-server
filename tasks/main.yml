@@ -1,0 +1,14 @@
+---
+
+- include: users.yml
+
+- include: document-root.yml
+
+- include: update-httpd-conf.yml
+
+- include: deploy-code.yml
+
+- include: selinux.yml
+
+- include: vhosts.yml
+

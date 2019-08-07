@@ -1,0 +1,8 @@
+- name: deploy html code
+  copy:
+    src: "{{code_directory}}/{{ item.key }}/index.html"
+    dest: "{{ main_document_root }}{{ item.value.website }}/{{ html_directory }}/"
+    owner: "{{ item.key }}"
+    group: "{{ item.key }}"
+    mode: '0644'
+  with_dict: "{{ v_hosts }}"

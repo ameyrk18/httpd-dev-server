@@ -1,0 +1,9 @@
+---
+- name: httpd dev webserver
+  hosts: all
+  become: yes
+  gather_facts: yes
+  vars:
+
+  roles:
+    - ../httpd-dev-server

@@ -1,0 +1,6 @@
+---
+dependencies:
+  - src: git@github.com:ameyrk18/httpd.git
+    version: v1.4
+    name: httpd
+    scm: git

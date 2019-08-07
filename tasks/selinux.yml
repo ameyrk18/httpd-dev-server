@@ -1,0 +1,25 @@
+# Allow HTTPD scripts and modules to connect to the network
+
+- name: enable selinux and enforcing
+  selinux:
+    policy: targeted
+    state: enforcing
+
+- name: modify selinux settings booleans for httpd dev server
+  seboolean:
+    name: "{{ item }}"
+    state: yes
+    persistent: yes
+  when:
+    - ansible_selinux.status is defined
+    - ansible_selinux.status == "enabled"
+  with_items:
+    - "{{ httpd_sebooleans }}"
+
+- name: Allow Apache to listen on specific tcp port for each developer
+  seport:
+    ports: "{{ item.value.port }}"
+    proto: tcp
+    setype: http_port_t
+    state: present
+  with_dict: "{{ v_hosts }}"
