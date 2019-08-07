@@ -10,6 +10,9 @@
 8. Allows Apache to listen on specific tcp port for each developer by enabling seport
 9. Deploys html code
 10. Configures vhosts 
+11. Validates httpd configuration
+12. Restarts httpd
+
 # How to execute this role 
 
 ```

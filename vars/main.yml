@@ -34,7 +34,7 @@ _httpd_service:
   Ubuntu: apache2
 
 _httpd_binary:
-  default: httpd
+  default: /usr/sbin/httpd
   Debian: apachectl
   Ubuntu: apachectl
 

@@ -20,6 +20,11 @@
     state: link
   with_dict: "{{ v_hosts }}"
 
+- name: test httpd configuration validity
+  command: "{{ httpd_binary }} -t"
+  changed_when: no
+  retries: 3
+
 - name: start and enable httpd
   service:
     name: "{{ httpd_service }}"
