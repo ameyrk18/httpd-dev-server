@@ -72,3 +72,33 @@ https://<yourip>:8082 (apple.com)
 https://<yourip>:8083 (papaya.com)
 https://<yourip>:8084  (grapes.com)
 ```
+
+# Molecule unit testing 
+
+Prerequisite (tested on mac):
+
+``brew install molecule ``
+
+``pip install 'molecule[docker]'``
+
+``git clone https://github.com/ameyrk18/httpd-dev-server.git ``
+
+``molecule init``
+
+``molecule test`` # run tests. sample test case will be executed and below will be the output.
+
+```    ============================= test session starts ==============================
+       platform darwin -- Python 2.7.16, pytest-4.6.5, py-1.8.0, pluggy-0.12.0
+       rootdir: /Users/ameykamble/IdeaProjects/quickies/final-submission/httpd-dev-server/molecule/default
+       plugins: testinfra-3.0.6, pylama-7.4.3
+   collected 1 item                                                               
+       
+       tests/test_default.py .                                                  [100%]
+       
+       =========================== 1 passed in 3.61 seconds ===========================
+```
+
+TO DO: 
+
+1. Add actual unit test cases 
+2. Test the pipeline and get that working in jenkins
