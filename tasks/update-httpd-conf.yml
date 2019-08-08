@@ -1,3 +1,4 @@
+---
 - name: update httpd configuration
   template:
     src: httpd.conf.j2

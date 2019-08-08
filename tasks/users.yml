@@ -1,3 +1,4 @@
+---
 - name: Adding user "{{ item.key }}"
   user: name="{{ item.key }}"
     shell=/bin/bash

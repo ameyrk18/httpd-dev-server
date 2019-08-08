@@ -1,4 +1,24 @@
 ---
+galaxy_info:
+  author: Amey
+  description: Developer
+  company: bhadracorp
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.2
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Debian
+      versions:
+        - jessie
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+        - xenial
+
 dependencies:
   - src: git@github.com:ameyrk18/httpd.git
     version: v1.4

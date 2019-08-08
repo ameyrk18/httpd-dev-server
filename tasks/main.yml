@@ -1,14 +1,18 @@
 ---
+- name: create users
+  include_tasks: users.yml
 
-- include: users.yml
+- name: create document root
+  include_tasks: document-root.yml
 
-- include: document-root.yml
+- name: update httpd config
+  include_tasks: update-httpd-conf.yml
 
-- include: update-httpd-conf.yml
+- name: deploy code
+  include_tasks: deploy-code.yml
 
-- include: deploy-code.yml
+- name: selinux task
+  include_tasks: selinux.yml
 
-- include: selinux.yml
-
-- include: vhosts.yml
-
+- name: configure vhosts file
+  include_tasks: vhosts.yml

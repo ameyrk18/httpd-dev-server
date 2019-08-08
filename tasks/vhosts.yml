@@ -1,3 +1,4 @@
+---
 - name: configure vhosts
   template:
     src: vhosts.conf.j2

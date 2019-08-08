@@ -1,2 +1,2 @@
 [apache]
-172.25.8.79 ansible_ssh_host=172.25.8.79
+172.25.8.41 ansible_ssh_host=172.25.8.41

@@ -1,6 +1,7 @@
+---
 - name: deploy html code
   copy:
-    src: "{{code_directory}}/{{ item.key }}/index.html"
+    src: "{{ code_directory }}/{{ item.key }}/index.html"
     dest: "{{ main_document_root }}{{ item.value.website }}/{{ html_directory }}/"
     owner: "{{ item.key }}"
     group: "{{ item.key }}"

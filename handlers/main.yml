@@ -1,14 +1,14 @@
-#---
+# ---
 #
-## handlers file for httpd
-#- name: test httpd configuration validity
-#  command: "{{ httpd_binary }} -t"
-#  changed_when: no
-#  retries: 10
+# # handlers file for httpd
+# - name: test httpd configuration validity
+#   command: "{{ httpd_binary }} -t"
+#   changed_when: no
+#   retries: 10
 #
-#- name: restart httpd
-#  service:
-#    name: "{{ httpd_service }}"
-#    state: restarted
-#  when:
-#    - ansible_virtualization_type != "docker"
+# - name: restart httpd
+#   service:
+#     name: "{{ httpd_service }}"
+#     state: restarted
+#   when:
+#     - ansible_virtualization_type != "docker"

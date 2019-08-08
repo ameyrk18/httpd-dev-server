@@ -1,18 +1,19 @@
+---
 main_document_root: /var/www/
 
 v_hosts:
-     dev1:
-       website: mango.com
-       port: 8081
-     dev2:
-       website: apple.com
-       port: 8082
-     dev3:
-       website: papaya.com
-       port: 8083
-     dev4:
-       website: grapes.com
-       port: 8084
+  - dev1:
+      website: mango.com
+      port: 8081
+  - dev2:
+      website: apple.com
+      port: 8082
+  - dev3:
+      website: papaya.com
+      port: 8083
+  - dev4:
+      website: grapes.com
+      port: 8084
 
 html_directory: public_html
 
